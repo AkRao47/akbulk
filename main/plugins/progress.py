@@ -47,11 +47,12 @@ async def progress_for_pyrogram(
             )
 
         tmp = progress + "├ 𝙎𝙞𝙯𝙚: {0} / {1}\n├ 𝙎𝙥𝙚𝙚𝙙: {2}/s\n├ 𝙀𝙏𝘼: {3}\n╰─⌈ 𝘽𝙤𝙩 𝙢𝙖𝙙𝙚 𝙗𝙮 𝙄𝙉𝙑𝙄𝙓 ⌋──╯".format(
-            humanbytes(current),
-            humanbytes(total),
-            humanbytes(speed),
-            estimated_total_time if estimated_total_time != '' else "0 s"
-        )
+    humanbytes(current),
+    humanbytes(total),
+    humanbytes(speed),
+    estimated_total_time if estimated_total_time != '' else "0 s"
+)
+
         try:
             text = f"{ud_type}\n {tmp}"
             if message.text != text or message.caption != text:
