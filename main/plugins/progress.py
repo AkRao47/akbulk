@@ -46,11 +46,8 @@ async def progress_for_pyrogram(
                     for _ in range(14 - math.floor(percentage / 14))
             )
 
-        tmp = progress + "├ 𝙎𝙞𝙯𝙚: {0} / {1}\n├ 𝙎𝙥𝙚𝙚𝙙: {2}/s\n├ 𝙀𝙏𝘼: {3}\n╰─⌈ 𝘽𝙤𝙩 𝙢𝙖𝙙𝙚 𝙗𝙮 𝙄𝙉𝙑𝙄𝙓 ⌋──╯".format(
-            humanbytes(current),
-            humanbytes(total),
-            humanbytes(speed),
-            estimated_total_time if estimated_total_time != '' else "0 s"
+        tmp = progress + f"├ 𝙎𝙞𝙯𝙚: {humanbytes(current)} / {humanbytes(total)}\n├ 𝙎𝙥𝙚𝙚𝙙: {humanbytes(speed)}/s\n├ 𝙀𝙏𝘼: {estimated_total_time if estimated_total_time != '' else '0 s'}\n╰─⌈ 𝘽𝙤𝙩 𝙢𝙖𝙙𝙚 𝙗𝙮 𝙄𝙉𝙑𝙄𝙓 ⌋──╯"
+
         )
         try:
             text = f"{ud_type}\n {tmp}"
